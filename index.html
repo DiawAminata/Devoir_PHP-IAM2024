@@ -1,12 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page d'Exercices</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-image: url(Php_image.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            color: #333;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        p {
+            margin-top: 5px;
+        }
+
+        section {
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            padding: 5px; /* Ajustez cette valeur pour la taille du rembourrage */
+            border-radius: 5px;
+            background-color: #fff;
+           text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        /* Style the selected option */
+        select option:checked {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Style the section containing the exercise dropdown */
+        section {
+            border: 1px solid #ddd;
+            padding: 5px; /* Ajustez cette valeur pour la taille du rembourrage */
+            border-radius: 5px;
+            background-color: #fff;
+            background-size: 5%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style the footer */
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+
+        /* Add a hover effect to the dropdown options */
+        select option:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+    </style>
 </head>
+
 <body>
-    <h2>Bonjour!</h2>
-    <a href="./exercice1.php"> ghj</a>
+
+    <!-- En-tête de la page -->
+    <header>
+        <h1>Devoir Php</h1>
+        <p>Bienvenue sur notre page d'exercices. Utilisez la liste déroulante ci-dessous pour sélectionner un exercice et accéder directement à sa correction sur une autre page.
+
+        </p>
+    </header>
+
+    <!-- Liste d'exercices -->
+    <section>
+        <h2>Exercices</h2>
+
+        <!-- Liste déroulante pour sélectionner un exercice -->
+        <label for="exerciceList">Choisissez un exercice :</label>
+        <select id="exerciceList" onchange="redirectToSelectedExercise()">
+            <option data-href="http://localhost/devoir-php/exercice1.php">Exercice 1 </option>
+            <option data-href="http://localhost/devoir-php/exercice2.php">Exercice 2 </option>
+            <option data-href="http://localhost/devoir-php/exercice3-A.php">Exercice 3A </option>
+            <option data-href="http://localhost/devoir-php/exercice3-B.php">Exercice 3B </option>
+            <option data-href="http://localhost/devoir-php/exercice4.php">Exercice 4 </option>
+            <option data-href="http://localhost/devoir-php/exercice5.php">Exercice 5 </option>
+            <option data-href="http://localhost/devoir-php/exercice6.php">Exercice 6 </option>
+            <option data-href="http://localhost/devoir-php/exercice7.php">Exercice 7 </option>
+            <option data-href="http://localhost/devoir-php/exercice8.php">Exercice 8 </option>
+            <option data-href="http://localhost/devoir-php/exercice9.php">Exercice 9 </option>
+            <option data-href="http://localhost/devoir-php/exercice10.php">Exercice 10 </option>
+            <option data-href="http://localhost/devoir-php/exercice11.php">Exercice 11 </option>
+            <option data-href="http://localhost/devoir-php/exercice12.php">Exercice 12 </option>
+            <option data-href="http://localhost/devoir-php/exercice13.php">Exercice 13 </option>
+            <option data-href="http://localhost/devoir-php/exercice14.php">Exercice 14 </option>
+            <option data-href="file:///C:/Users/diawa/Desktop/devoir-php/vendre.html">Exercice 14A </option>
+            <option data-href="file:///C:/Users/diawa/Desktop/devoir-php/acheter.html">Exercice 14B </option>
+            <option data-href="file:///C:/Users/diawa/Desktop/devoir-php/louer.html">Exercice 14C </option>
+            <option data-href="http://localhost/devoir-php/exercice15.php">Exercice 15 </option>
+            <option data-href="http://localhost/devoir-php/exercice16.php">Exercice 16</option>
+            <option data-href="http://localhost/devoir-php/exercice17.php">Exercice 17 </option>
+            <option data-href="http://localhost/devoir-php/exercice18.php">Exercice 18 </option>
+            <!-- Ajoutez plus d'options avec des valeurs différentes pour les exercices -->
+        </select>
+    </section>
+
+    <script>
+        function redirectToSelectedExercise() {
+            var select = document.getElementById("exerciceList");
+            var selectedOption = select.options[select.selectedIndex];
+            var url = selectedOption.getAttribute("data-href");
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
+
 </body>
-</html
+</html>
